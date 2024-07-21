@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPEC Travels</title>
+    <link rel="icon" type="image/x-icon" href="faviconlogo-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="footer.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="aboutus.css"> -->
+    <!-- <link rel="stylesheet" href="jsswi[er.css"> -->
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --grey:#2d7177;
+}
+*::selection{
+    background-color: var(--grey);
+    color: white;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100%;
+    /* background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(joshua-earle--87JyMb9ZfU-unsplash.jpg); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#2d7177;
+    height: 5rem;
+    
+  
+  }
+  #navbar-website-name{
+    margin-left: 1rem;
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Mochiy Pop P One', sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .nav-links{
+    flex: 1;
+    text-align: right;
+  }
+  .nav-links ul{
+    margin-top: 1.5rem;
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    /* padding: 8px 12px; */
+    position: relative;
+  }
+  .nav-links ul li a{
+    text-decoration: none;
+    margin-left: 0.3rem;
+    padding: 0.3rem 0.5rem;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  .nav-links ul li a:hover{
+    /* width: 100%; */
+    transition: 0.5s;
+  background-color: #173d41;
+  padding: 5px 15px;
+  border-radius: 0.5rem;
+  color: #fff;
+  }
+  .nav-links ul li a.active{
+    background-color: #0099a7;
+  /* background-color: #2d7177; */
+  padding: 5px 15px;
+  /* border-bottom: .2rem solid rgb(255, 255, 255); */
+  border-radius: 0.5rem;
+  color: rgb(255, 252, 252);
+  }
+  .text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .text-box h1{
+    margin-top: 2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+  }
+  .text-box p{
+    /* margin: 10px 0 40px; */
+    font-family: 'Bad Script', cursive;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+    color: white;
+  }
+  .hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #fcffff;
+    padding: 12px 34px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    color: rgb(253, 255, 253);
+    background-color: #2d7177;
+    font-family: 'Luxurious Roman', cursive;
+    padding: 7px 20px;
+    font-size: 17px;
+    /* margin-top: -5rem; */
+    border-radius: 10px;
+  }
+  
+  .hero-btn:hover{
+    /* border: 1px solid #f44336;
+    background: #f44336; */
+    transition: .5s;
+    background-color: white;
+    color: #2d7177;
+    font-family: 'Luxurious Roman', cursive;
+    padding: 7px 20px;
+    border: 0.15rem solid #2d7177;
+    font-size: 17px;
+    border-radius: 10px;
+  }
+  /* nav .fa{
+    
+  } */
+  #fa-times{
+    display: none;
+  }
+  
+  #fa-bar{
+    display: none;
+  }
+  @media (max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .text-box p{
+        font-size: 18px;
+    }
+    #navbar-website-name{
+      font-size: 18px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: fixed;
+        background: #2d7177;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    #fa-bar, #fa-times{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+    
+  }
+
+/* about us section css code started */
+.aboutus-heading{
+    padding:2.5rem 0;
+  }
+.aboutus-heading span{
+    font-size: 3.5rem;
+    background: rgba(154, 196, 196, 0.212);
+
+    color:var(--grey);
+    border-radius: .5rem;
+    padding:.2rem 1rem;
+    text-transform: capitalize;
+  }
+  
+  .aboutus-heading span.space{
+    background:none;
+  }
+.aboutus-para{
+    font-size: 23px;
+    font-style:'Ubuntu', sans-serif;
+    /* border: 0.2rem solid rgb(243, 243, 212); */
+    padding: 2rem;
+    margin-top: 2rem;
+    font-weight: 500;
+    /* border: 2px solid black; */
+    box-shadow: 0 0 2rem rgba(0,0,0,.3);
+    height: 25rem;
+    
+    
+}
+.slider{
+  height: 25rem;
+  width: 30rem;
+  margin-top: 2rem;
+
+}
+@media (max-width: 700px){
+    .col-6{
+        width: 100%;
+    }
+    .aboutus-para{
+        font-size: 16px
+    }
+    .aboutus-heading{
+        padding:15px 0;
+        line-height: 4rem;
+        /* margin-left: 1rem; */
+        
+      }
+      .aboutus-heading span{
+        font-size: 20px;
+        background: rgba(154, 196, 196, 0.212);
+    
+        color:var(--grey);
+        border-radius: .5rem;
+        padding:10px 10px;
+        text-transform: capitalize;
+       
+      }
+      button:not(:disabled) {
+        cursor: pointer;
+        padding: 0 67px;
+        font-size: 12px;
+        border: 1px solid rgb(255, 255, 255);
+    }
+}
+/* jsswiprer */
+body {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* footer */
+  .footer{
+    height: 15rem;
+}
+
+.footer .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    /* height: 20rem; */
+    background-color: var(--grey);
+    }
+    
+    .footer .footer-container .box h3 {
+    font-size: 1.4rem;
+    padding: 1.1rem 0.1rem;
+    color: #fff;
+    /* border: 2px solid red; */
+    }
+    
+    .footer .footer-container .box p {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.3rem;
+    color: #eee;
+    }
+    
+    .footer .footer-container .box a {
+    display: block;
+    font-size: 1rem;
+    padding: .7rem 0.1rem;
+    color: #fff;
+    text-decoration: none;
+    /* border: 3px solid greenyellow; */
+    }
+    
+    .footer .footer-container .box a:hover {
+    color: #88bfc5;
+    text-decoration: underline;
+    }
+    .stay{
+        /* padding-right: 0.5rem; */
+        margin-left: 1.3rem;
+    }
+    .footer-email{
+        padding: 0.4rem 1rem;
+        font-size: 1.1rem;
+        width: 19rem;
+        /* margin-right: 2rem; */
+
+    }
+    .footer-button{
+         padding: 8px 10px;
+        /* border: 2px solid red; */
+        /* margin-right: 90px; */
+        background-color:#0099a7;
+        border: 1px solid #0099a7 ;
+        color:white;
+        font-size: 1.1rem;
+    }
+    .hero-btn{
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid #ffffff;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+        color: rgb(253, 255, 253);
+        background-color: #2d7177;
+        font-family: 'Luxurious Roman', cursive;
+        padding: 10px 20px;
+        font-size: 15px;
+        margin-top: 0px;
+    }
+    
+    .hero-btn:hover{
+        transition: .5s;
+        background-color: white;
+        color: #2d7177;
+        font-family: 'Luxurious Roman', cursive;
+        padding: 7px 20px;
+        border: 0.15rem solid #2d7177;
+        font-size: 17px;
+    }
+    .font-awesome i{
+        border-radius: 50%;
+        background-color: #0099a7;
+        font-size: 1.1rem;
+        padding: 0.6rem 0.6rem;
+        color: white;
+        margin: 1.4rem 0.2rem;
+        cursor: pointer;
+        
+    }
+    .font-awesome{
+        background-color: var(--grey);
+        margin-left: -13px;
+        margin-right: -13px;
+        margin-top: -150px;
+    }
+    #facebook{
+    margin-left: 40px;
+    }
+    @media (max-width: 700px){
+        .footer .footer-container .box h3 {
+            font-size:0.8rem;
+            padding: 1.1rem 0.1rem;
+            color: #fff;
+            /* border: 2px solid red; */
+            }
+            .footer .footer-container .box p {
+                font-size: 0.7rem;
+                padding: 0.5rem 1.3rem;
+                color: #eee;
+                }
+                .footer .footer-container .box a {
+                    display: block;
+                    font-size: 0.7rem;
+                    padding: .7rem 0.1rem;
+                    color: #fff;
+                    text-decoration: none;
+                    /* border: 3px solid greenyellow; */
+                    }
+                    .footer-email{
+                        padding: 0.4rem 1rem;
+                        font-size: 0.7rem;
+                        width: 10rem;
+                        /* margin-right: 2rem; */
+                
+                    }
+                    .font-awesome{
+                        background-color: var(--grey);
+                        margin-left: -30px;
+                        margin-top: -100px;
+                    }
+                    .col-5 {
+                        width: 20%;
+                        margin-left: -9px;
+                    }
+                   .hero-btn{
+                    font-size: 11px;
+                    padding:5px 18px;
+                   }
+                   button:not(:disabled) {
+                    cursor: pointer;
+                    padding: 0 67px;
+                    
+                }
+                #facebook{
+    margin-left: 85px;
+    }
+                   .font-awesome i{
+                    border-radius: 50%;
+                    background-color: #0099a7;
+                    font-size: 0.8rem;
+                    padding: 10px 10px;
+                    color: white;
+                    /* margin: 10px 10px; */
+                    cursor: pointer;
+                    display: inline-block;
+                    margin-top: 100px;
+                
+                   
+      }
+      
+      .col-5 box{
+        width: 20%;
+      }
+    }
+   
+
+</style>
+
+
+
+</head>
+
+<body>
+    </div> 
+    <section class="header">
+        <nav>
+            <a href="index.html" id="navbar-website-name" >CPEC TRAVELS</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" id="fa-times" onclick="hideMenu()"></i>
+    
+                <ul>
+                   <li><a class="nav-link " aria-current="page" href="index.html"><i class="fa fa-home" ></i><span>HOME</span></a></li>
+                   <li><a class="nav-link " href="book.html"><i class="fa fa-pencil-square-o" ></i> BOOK</a> </li>
+                   <li><a class="nav-link active" href="aboutus.html"><i class="fa fa-info-circle" ></i> ABOUT</a></li>
+                   <li> <a class="nav-link" href="package.html"><i class="fa fa-chevron-right" ></i>PACKAGES</a></li>
+                   <li><a class="nav-link" href="gallery.html"><i class="fa fa-picture-o" ></i> GALLERY</a></li>
+                   <li> <a class="nav-link" href="review.html"><i class="fa fa-user" ></i> REVIEWS</a></li>
+                   <li> <a class="nav-link" href="contactus.html"><i class="fa fa-phone"></i> CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="fa-bar" onclick="showMenu()"></i>
+    
+        </nav>
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="aboutus-heading">
+                    <span>A</span>
+                    <span>B</span>
+                    <span>O</span>
+                    <span>U</span>
+                    <span>T</span>
+                    <span class="space"></span>
+                    <span>U</span>
+                    <span>S</span>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-6" data-bs-ride="carousel">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper slider">
+                            <div class="swiper-slide"><img src="img1.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="img2.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="img3.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="img4.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="img5.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="image5.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <p class="aboutus-para">
+                        By way of our Travel Business, we aim to provide our customers with experience that will
+                        remember
+                        and
+                        contribute to society.
+                        <br><br> To maintain continual interaction with the clients and to respond quickly to our
+                        client’s
+                        concern and
+                        needs. <br><br>
+                        To do our best to provide Customized ticket booking services tailored to our client’s need.
+                    </P>
+                </div>
+    
+            </div>
+        </div> 
+    
+    
+    
+    </section>
+
+
+
+
+
+
+
+    <footer class="container-fluid footer">
+        <div class="row footer-container">
+            <div class="col-5 box">
+
+                <h3 class="stay">Stay Connected</h3>
+                <p>Join over 15000 people who receive weekly <br>  travel  tips and special discount </p>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6 ">
+                            <!-- <input class="footer-email" type="text" placeholder="Enter your email"> -->
+
+                        </div>
+                        <div class="col-6 heavy">
+                            <!-- <button class="hero-btn" id="button">Sign Up<i class="fa fa-caret-right" aria-hidden="true"></i>
+                            </button> -->
+                            <!-- <a href="#">sign up</a> -->
+                        </div>
+                    </div>
+                    <div class="row">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-2 box">
+
+                <h3>Branch Locations </h3>
+                <a href="#">Pakistan</a>
+                <a href="#">China</a>
+                <a href="#">USA</a>
+                <a href="#">Japan</a>
+            </div>
+
+
+            <div class="col-2 box">
+
+                <h3>Quick Links </h3>
+                <a href="#">Home</a>
+                <a href="#">Book</a>
+                <a href="#">Packages</a>
+                <a href="#">Services</a>
+                <a href="#">Contact Us</a>
+
+            </div>
+            <div class="col-2 box">
+
+                <h3>Follow Us </h3>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+
+
+            </div>
+
+
+        </div>
+        <div class="font-awesome">
+            <i class="fa fa-facebook" id="facebook" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+
+
+        </div>
+
+        
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 1700,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+     <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+
+</body>
+
+</html>

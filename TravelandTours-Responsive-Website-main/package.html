@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPEC Travels</title>
+    <link rel="icon" type="image/x-icon" href="faviconlogo-removebg-preview.png">
+    <!-- <link rel="stylesheet" href="packages.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --grey:#2d7177;
+}
+*::selection{
+    background-color: var(--grey);
+    color: white;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    /* background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(joshua-earle--87JyMb9ZfU-unsplash.jpg); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+  nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#2d7177;
+    height: 5rem;
+    
+  
+  }
+  #navbar-website-name{
+    margin-left: 1rem;
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Mochiy Pop P One', sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .nav-links{
+    flex: 1;
+    text-align: right;
+  }
+  .nav-links ul{
+    margin-top: 1.5rem;
+  }
+  .nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    /* padding: 8px 12px; */
+    position: relative;
+  }
+  .nav-links ul li a{
+    text-decoration: none;
+    margin-left: 0.3rem;
+    padding: 0.3rem 0.5rem;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  .nav-links ul li a:hover{
+    /* width: 100%; */
+    transition: 0.5s;
+  background-color: #173d41;
+  padding: 5px 15px;
+  border-radius: 0.5rem;
+  color: #fff;
+  }
+  .nav-links ul li a.active{
+    background-color: #0099a7;
+  /* background-color: #2d7177; */
+  padding: 5px 15px;
+  /* border-bottom: .2rem solid rgb(255, 255, 255); */
+  border-radius: 0.5rem;
+  color: rgb(255, 252, 252);
+  }
+  .text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .text-box h1{
+    margin-top: 2rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+  }
+  .text-box p{
+    /* margin: 10px 0 40px; */
+    font-family: 'Bad Script', cursive;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+    color: white;
+  }
+  .hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #2d7177;
+    padding: 12px 34px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    color: rgb(253, 255, 253);
+    background-color: #2d7177;
+    font-family: 'Luxurious Roman', cursive;
+    padding: 7px 20px;
+    font-size: 17px;
+    margin-top: -5rem;
+    border-radius: 10px;
+  }
+  
+  .hero-btn:hover{
+    /* border: 1px solid #f44336;
+    background: #f44336; */
+    transition: .5s;
+    background-color: white;
+    color: #2d7177;
+    font-family: 'Luxurious Roman', cursive;
+    padding: 7px 20px;
+    border: 0.15rem solid #2d7177;
+    font-size: 17px;
+    border-radius: 10px;
+  }
+  /* nav .fa{
+    
+  } */
+  #fa-times{
+    display: none;
+  }
+  
+  #fa-bar{
+    display: none;
+  }
+  @media (max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .text-box p{
+        font-size: 18px;
+    }
+    #navbar-website-name{
+      font-size: 18px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: fixed;
+        background: #2d7177;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    #fa-bar, #fa-times{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+    
+  }
+  
+  
+  
+
+/* packages section of css started from here  */
+
+.aboutus-heading{
+    padding:2.5rem 0;
+  }
+.aboutus-heading span{
+    font-size: 3.5rem;
+    background: rgba(154, 196, 196, 0.212);
+
+    color:var(--grey);
+    border-radius: .5rem;
+    padding:.2rem 1rem;
+    text-transform: capitalize;
+  }
+  .box{
+    flex: 1 1 30rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+    margin-bottom: 2rem;
+     height: 45rem; 
+     /* width: 25rem; */
+}
+   .box img{
+    width:100%;
+    height: 25rem;
+    object-fit: cover;
+}
+.box .content{
+    padding: 2rem;
+}
+.content h3{
+            font-size: 2rem;
+}
+.box .content i{
+    color: var(--grey);
+    font-size: 1.7rem;
+}
+.box .content .price{
+    font-size: 1.7rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+
+}
+.box .content .price span{
+    font-size: 1rem;
+    text-decoration: line-through;
+    color: #666;
+}
+.button{
+    color: rgb(253, 255, 253);
+    background-color: #2d7177;
+font-family: 'Luxurious Roman', cursive;
+padding: 7px 20px;
+font-size: 17px;
+cursor: pointer;
+text-decoration: none;
+
+
+}
+.button:hover{
+    background-color: white;
+    color: #2d7177;
+    font-family: 'Luxurious Roman', cursive;
+    padding: 7px 20px;
+    border: 2px solid #2d7177;
+    /* transition-delay: 0.1s; */
+    transition-duration: 0.4s;
+}
+
+@media (max-width: 700px){
+    .aboutus-heading{
+      padding: 15px0;
+      line-height: 5rem;
+      /* margin-left: 1rem; */
+      
+    }
+  .aboutus-heading span{
+      font-size: 20px;
+      background: rgba(154, 196, 196, 0.212);
+  
+      color:var(--grey);
+      border-radius: .5rem;
+      padding:10px 10px;
+      text-transform: capitalize;
+     
+    }
+   
+   
+  
+  }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html" id="navbar-website-name" >CPEC TRAVELS</a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" id="fa-times" onclick="hideMenu()"></i>
+    
+                <ul>
+                   <li><a class="nav-link " aria-current="page" href="index.html"><i class="fa fa-home" ></i><span>HOME</span></a></li>
+                   <li><a class="nav-link" href="book.html"><i class="fa fa-pencil-square-o" ></i> BOOK</a> </li>
+                   <li><a class="nav-link" href="aboutus.html"><i class="fa fa-info-circle" ></i> ABOUT</a></li>
+                   <li> <a class="nav-link active" href="package.html"><i class="fa fa-chevron-right" ></i>PACKAGES</a></li>
+                   <li><a class="nav-link" href="gallery.html"><i class="fa fa-picture-o" ></i> GALLERY</a></li>
+                   <li> <a class="nav-link" href="review.html"><i class="fa fa-user" ></i> REVIEWS</a></li>
+                   <li> <a class="nav-link" href="contactus.html"><i class="fa fa-phone"></i> CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" id="fa-bar" onclick="showMenu()"></i>
+    
+        </nav>
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="aboutus-heading">
+                    <span>P</span>
+                    <span>A</span>
+                    <span>C</span>
+                    <span>K</span>
+                    <span>A</span>
+                    <span>G</span>
+                    <span>E</span>
+                    <span>S</span>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="istockphoto-1165262128-170667a.jpg" alt="">
+                        <div class="content">
+                            <h3> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Great Wall Of China </h3>
+                            <p> Great Wall of China location is mainly in northern China, and  few sections in southern China </p>
+                            <div class="stars">
+        
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+        
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class=" button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="zhouzhuang.jpg" alt="">
+                        <div class="content">
+                            <h3> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Zhouzhuang </h3>
+                            <p>Zhouzhuang is a popular tourist destination.It is one of the most famous water townships in China
+                            </p>
+                            <div class="stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class="button">Book Now</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="shilin stone forest.jpg" alt="">
+                        <div class="content">
+                            <h3> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Shilin Stone Forest</h3>
+                            <p>
+                                Shilin (Stone Forest) UNESCO Global Geopark is situated in China's Yunnan Province</p>
+                            <div class="stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class="button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="chopsticks-on-the-loose-_75I7lCDgY8-unsplash.jpg" alt="">
+                        <div class="content">
+                            <h3> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Jiuzhaigou </h3>
+                            <p>Jiuzhaigou is located in Sichuan.</p>
+                            <div class="stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class="button">Book Now</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="rosalind-chang-V_96JHkKY-g-unsplash.jpg" alt="">
+                        <div class="content">
+                            <h3> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Yangtze River Cruise </h3>
+                            <p>The heart of China and the third longest river in the world (after the Nile and Amazon),</p>
+                            <div class="stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class="button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="mehtab-farooq-8qCtP97jgoE-unsplash.jpg" alt="">
+                        <div class="content">
+                            <h3> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Hunza Valley </h3>
+                            <p>Hunza is a beautiful mountainous valley located in the Gilgit-Baltistan area of Pakistan.</p>
+                            <div class="stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class="button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="gettyimages-859950780-612x612.jpg" alt="">
+                        <div class="content">
+                            <h3> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Skardu Valley</h3>
+                            <p>The Skardu Valley ( وادی سکردو) is located in Gilgit-Baltistan, Pakistan. The valley is about 10
+                                km wide and 40 km long.</p>
+                            <div class="stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class="button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="border4.jpg" alt="">
+                        <div class="content">
+                            <h3> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Khunjerab Pass</h3>
+                            <p>Khunjerab Pass is a 4,693-meter -high mountain pass in the Karakoram Mountains,
+                                on the northern border of Pakistan</p>
+                            <div class="stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class="button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="pakistan-places-13-768x512.jpg.webp" alt="">
+                        <div class="content">
+                            <h3> <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Fairy Meadows</h3>
+                            <p> The grassland is located in the Rakhiot valley, at one end of the Rakhiot glacier which
+                                originates from the Nanga Parbat</p>
+                            <div class="stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class="button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box">
+                        <img src="pakistan-places-07-768x512.jpg.webp" alt="">
+                        <div class="content">
+                            <h3><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                Deosai National Park</h3>
+                            <p>The Deosai National Park is located in Gilgit Baltistan. It
+                                has an average elevation of 4,114 metres</p>
+                            <div class="stars">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="price"> $90.00 <span>$120.00</span> </div>
+                            <a href="#" class="button">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <!-- </div>  -->
+    
+    
+    
+    </section>
+
+ 
+
+
+    
+
+
+
+
+
+
+
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
